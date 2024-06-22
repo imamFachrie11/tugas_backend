@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       tipe_material: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM("video", "end quiz", "single quiz", "summary"),
       },
       exp: {
         type: Sequelize.INTEGER
@@ -26,10 +26,12 @@ module.exports = {
       },
       created_at: {
         allowNull: false,
+        defaultValue: Sequelize.fn("Now"),
         type: Sequelize.DATE
       },
       updated_at: {
         allowNull: false,
+        defaultValue: Sequelize.fn("Now"),
         type: Sequelize.DATE
       }
     });

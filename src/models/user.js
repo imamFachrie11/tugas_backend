@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      user.belongsToMany(models.materi, {
+      user.belongsToMany(models.material, {
         through: models.progress,
         foreignKey: "id_user",
         as: "materials",

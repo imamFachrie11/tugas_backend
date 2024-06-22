@@ -3,7 +3,7 @@
 const {
   bab,
   kelas,
-  mata_pembelajaran,
+  mata_pelajaran,
   material,
   mode_pembelajaran,
   progress,
@@ -17,7 +17,7 @@ module.exports = {
     await user.destroy({ truncate: true });
     await kelas.destroy({ truncate: true });
     await mode_pembelajaran.destroy({ truncate: true });
-    await mata_pembelajaran.destroy({ truncate: true });
+    await mata_pelajaran.destroy({ truncate: true });
     await bab.destroy({ truncate: true });
     await sub_bab.destroy({ truncate: true });
     await material.destroy({ truncate: true });
@@ -75,7 +75,7 @@ module.exports = {
       { nama_mode_pembelajaran: "Kurikulum Merdeka", id_kelas: 4 },
     ]);
 
-    await queryInterface.bulkInsert("mata_pembelajarans", [
+    await queryInterface.bulkInsert("mata_pelajarans", [
       { nama_mata_pembelajaran: "Matematika", id_mode_pembelajaran: 1 },
       { nama_mata_pembelajaran: "Bahasa Indonesia", id_mode_pembelajaran: 1 },
       { nama_mata_pembelajaran: "IPA Terpadu", id_mode_pembelajaran: 1 },
@@ -98,36 +98,36 @@ module.exports = {
     ]);
 
     await queryInterface.bulkInsert("babs", [
-      { nama_bab: "Bilangan 0-10", id_mata_pembelajaran: 1 },
-      { nama_bab: "Aplikasi bilangan 0-10", id_mata_pembelajaran: 1 },
-      { nama_bab: "Geometri dan Pola", id_mata_pembelajaran: 1 },
-      { nama_bab: "Geometri dan Pola 2", id_mata_pembelajaran: 1 },
-      { nama_bab: "Bilangan 11-20", id_mata_pembelajaran: 1 },
-      { nama_bab: "pengukuran (1)", id_mata_pembelajaran: 1 },
-      { nama_bab: "Bilangan 21-40", id_mata_pembelajaran: 1 },
-      { nama_bab: "Geometri dan Pola 3", id_mata_pembelajaran: 1 },
-      { nama_bab: "pengukuran (2)", id_mata_pembelajaran: 1 },
+      { nama_bab: "Bilangan 0-10", id_mata_pelajaran: 1 },
+      { nama_bab: "Aplikasi bilangan 0-10", id_mata_pelajaran: 1 },
+      { nama_bab: "Geometri dan Pola", id_mata_pelajaran: 1 },
+      { nama_bab: "Geometri dan Pola 2", id_mata_pelajaran: 1 },
+      { nama_bab: "Bilangan 11-20", id_mata_pelajaran: 1 },
+      { nama_bab: "pengukuran (1)", id_mata_pelajaran: 1 },
+      { nama_bab: "Bilangan 21-40", id_mata_pelajaran: 1 },
+      { nama_bab: "Geometri dan Pola 3", id_mata_pelajaran: 1 },
+      { nama_bab: "pengukuran (2)", id_mata_pelajaran: 1 },
     ]);
 
     await queryInterface.bulkInsert("sub_babs", [
       {
         nama_sub_bab: "Mengenai Bilangan 1-10 (1)",
-        is_free: 1,
+       lebel_gratis: 1,
         id_bab: 1,
       },
       {
         nama_sub_bab: "Mengenai Bilangan 1-10 (2)",
-        is_free: 0,
+       lebel_gratis: 0,
         id_bab: 1,
       },
       {
         nama_sub_bab: "Lebih Besar? Lebih Kecil? 1-10",
-        is_free: 0,
+       lebel_gratis: 0,
         id_bab: 1,
       },
       {
         nama_sub_bab: "Bermain dengan Bilangan 1-10",
-        is_free: 0,
+       lebel_gratis: 0,
         id_bab: 1,
       },
     ]);
@@ -149,7 +149,7 @@ module.exports = {
       },
       {
         nama_material: "single quiz 1",
-        tipe_materi: "single quiz",
+        tipe_material: "single quiz",
         exp: 125,
         gold: 10,
         id_sub_bab: 1,

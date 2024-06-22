@@ -20,7 +20,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   material.init({
     nama_material: DataTypes.STRING,
-    tipe_material: DataTypes.ENUM,
+    tipe_material: DataTypes.ENUM(
+      "video",
+      "end quiz",
+      "single quiz",
+      "summary"
+    ),
     exp: DataTypes.INTEGER,
     gold: DataTypes.INTEGER,
     id_sub_bab: DataTypes.INTEGER
